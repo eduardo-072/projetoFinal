@@ -1,169 +1,96 @@
-
 Console.WriteLine("-----Bem vindo ao nosso livro de receitas-----");
 Console.WriteLine("Selecione a receita de acordo com o número dela");
  
-int bolo = 1;
-int PãoItaliano = 2;
-int PãoRecheado = 3;
-int Rocambole = 4;
-string sair;
+const double ReceitaFarinha = 1;
+const double ReceitaAgua = 0.7;
+const double ReceitaFermento = 0.4;
+const double ReceitaSal = 0.02;
+const double ReceitaLeite = 0.06;
+const double ReceitaOleo = 0.19;
+const double ReceitaAçucar = 0.3;
+const double ReceitaOvos = 0.07;
 
-void ExibeMenu()
-{
-        Console.WriteLine();
-        Console.WriteLine("\nObrigado pela prefência!");
-    }
-{
-    Console.WriteLine("+==========================================+");
-    Console.WriteLine("| LIVRO DE RECEITAS DO PADEIRO |");
-    Console.WriteLine("| RECEITAS |");
-    Console.WriteLine("| 1- Receita de bolo");
-    Console.WriteLine("| 2- Receita de Pão Recheado |");
-    Console.WriteLine("| 3- Receita de Pão Francês |");
-    Console.WriteLine("| 4- Rocambole");
-    Console.WriteLine("| 5-Fechar o livro|");
+double percentualPaoRelativoFarinha = ReceitaFarinha + ReceitaAgua + ReceitaFermento + ReceitaSal;
+double pesoPaoRecheado = ReceitaFarinha + ReceitaAgua + ReceitaFermento + ReceitaSal;
 
-    Console.WriteLine("+===========================================+");
+
+double pesoPao, farinha, agua, fermento, sal, leite, ovos, açucar, oleo;
+ 
+int PãoItaliano = 1;
+//int bolo = 2;
+//int PãoRecheado = 3;
+//int Rocambole = 4;
+//string sair;
+ 
+ 
+Console.WriteLine("+==============================+");
+Console.WriteLine("| LIVRO DE RECEITAS DO PADEIRO |");
+Console.WriteLine("+===========RECEITAS===========+");
+Console.WriteLine("| 1- Receita de Pão Italiano |");
+Console.WriteLine("| 2- Receita de Pão Recheado |");
+Console.WriteLine("| 3- Receita de bolo |");
+Console.WriteLine("| 4- Receita de Rocambole |");
+Console.WriteLine("| 5- Fechar o livro |");
+Console.WriteLine("+==============================+\n");
+Console.WriteLine(" Digite um número da lista ");
+ 
+string opcao = Console.ReadLine().ToUpper();
+
+switch (opcao)
+{
+    case "1":
+    
+// Console.ReadLine();
+// Console.Clear();
+
+Console.WriteLine("Receita de pão italiano");
+Console.WriteLine("Peso desejado de pão italiano (em gramas)...: ");
+pesoPao = Convert.ToDouble(Console.ReadLine());
+ 
+farinha = pesoPao / percentualPaoRelativoFarinha;
+ 
+agua = farinha * ReceitaAgua;
+fermento = farinha * ReceitaFermento;
+sal = farinha * ReceitaSal;
+ 
+Console.WriteLine("\nIngredientes:");
+ 
+Console.WriteLine($"Farinha....: {farinha:N0} g");
+Console.WriteLine($"Água.......: {agua:N0} g");
+Console.WriteLine($"Fermento...: {fermento:N0} g");
+Console.WriteLine($"Sal........: {sal:N0} g");
+
+break;
 }
 
-do
+switch (opcao)
 {
-    ExibeMenu();
-    Console.WriteLine("Deseja ver outra receita? S/N");
-    Console.WriteLine();
-    sair = Console.ReadLine().ToUpper();
-}    
-    while (sair != "S" && sair != "SIM");
+    case "2":
 
-if (PãoItaliano == 1)
-{
-    Console.WriteLine("Receita de pão italiano");
-    Console.WriteLine(@"
-    Farinha = 600
-    Água = 380
-    Fermento = 10
-    Açúcar = 30
-    ");
-   
-    Console.WriteLine(@"
-    1- Em uma tigela de uma batedeira — com gancho para pães —, coloque a farinha, o sal e o açúcar
- 
-    2- Deixe bater por 10 minutos
- 
-    3- Adicione água aos poucos, sem parar de bater, até a massa formar uma bola
- 
-    4- Acrescente o fermento e bata novamente até a massa ficar lisa e uniforme
- 
-    5- Molde a massa no formato de pão, dividindo ela em tamanhos que você deseja
- 
-    6- Coloque a massa em um recipiente untado com óleo. Cubra a massa com papel filme e deixe na geladeira de 10 a 12 horas
- 
-    7- Retire da geladeira e faça um corte comprido no pãozinho
- 
-    8- Asse no forno a 180 graus até ficar dourado
-    ");
-}
- 
- 
-else
-{
-    breagtk;
-}
- 
- 
-if (PãoRecheado == 2)
-{
     Console.WriteLine("Receita de pão recheado");
-    Console.WriteLine(@"
-    Farinha = 1/2;
-    Sal = 15;
-    Fermento = 10;
-    Margarina = 1;
-    Açúcar = 20;
-    ");
-   
-    Console.WriteLine(@"
-    1- Dilua o fermento em um copo de água morna com o açúcar
+    Console.WriteLine("Peso desejado de pão recheado (em gramas)...: ");
+    pesoPao = Convert.ToDouble(Console.ReadLine());
  
-    2- Em seguida misture os outros ingredientes
+    farinha = pesoPaoRecheado / percentualPaoRelativoFarinha;
  
-    3- Amassa e levante, empurrando a massa para frente, com a palma da mão e dobrando-a sobre si mesma
- 
-    4- Se for necessário, coloque mais água e mais farinha
- 
-    5- A massa não deverá grudar nas mãos
- 
-    6- Deve ficar com aspecto leve e esponjoso
- 
-    7- Deixe descansar por duas horas
- 
-    8- A seguir, amasse novamente e prepare o pão, dando-lhe o formato desejado e coloque no tabuleiro untado
- 
-    9- Se estiver pegajosa, espalhe mais farinha por cima
- 
-    10- Deixe que ela descanse mais uma hora
- 
-    11- Aqueça o forno e pincele o pão com água antes de colocá-lo no forno
- 
-    12- Assar por 40 minutos mais ou menos"
-    );
- 
-}
- 
- 
-else
-{
-    Console.WriteLine("Digite um número da lista");
-}
- 
-if (bolo == 3)
-{
-    Console.WriteLine("Receita de bolo de chocolate");
-    Console.WriteLine(@"
-    Farinha = 2;
-    Açúcar = 1/5;
-    Fermento = 1;
-    Óleo = 1;
-    ChocolateEmPó = 2;
-    ");
- 
-    Console.WriteLine(@"
-     1- Em um recipiente, misture a farinha de trigo, açúcar, Chocolate em Pó, fermento e o bicarbonato peneirados
- 
-     2- Junte o óleo, os ovos e a água fervente, misturando bem
- 
-     3- Despeje a massa em uma forma de aluminio untada com óleo e polvilhada com farinha de trigo, e leve ao forno à 180°C preaquecido, por 40 minutos
-    ");
-}
-else
-{
-    Console.WriteLine("Digite um número da lista");
+    agua = farinha * ReceitaAgua;
+    fermento = farinha * ReceitaFermento;
+    sal = farinha * ReceitaSal;
+    leite = farinha * ReceitaLeite;
+    oleo = farinha * ReceitaOleo;
+    açucar = farinha * ReceitaAçucar;
+    ovos = farinha * ReceitaOvos;
 
-}
- 
- if (Rocambole == 4)
-{
-    Console.WriteLine("Receita de rocambole com recheio de chocolate");
-    Console.WriteLine(@"
-    Ovos = 6;
-    ChocolateEmPó = 6;
-    Ovos = 6;
-    Água = 6;
-    Fermento = 6;
-    Farinha = 2/5;
-    Açucar = 2/5;
-    ");
-}
-else 
-{
-    Console.WriteLine("Digite um número da lista");
 
-}
-do
-{
-    ExibeMenu();
-    Console.WriteLine("Deseja ver outra receita? S/N");
-    Console.WriteLine();
-}    
-    while (sair != "S" && sair != "SIM");
 
+Console.WriteLine("\nIngredientes:");
+
+    Console.WriteLine($"Farinha {farinha:N0} g");
+    Console.WriteLine($"leite {leite:N0} g");
+    Console.WriteLine($"Sal {sal:N0} g");
+    Console.WriteLine($"Ovos {ovos:N0} g");
+    Console.WriteLine($"Açúcar {açucar:N0} g");
+    Console.WriteLine($"Óleo {oleo:N0} g");
+
+    break;
+}
