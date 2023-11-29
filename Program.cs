@@ -11,6 +11,7 @@ const double ReceitaOvos = 0.07;
 const double ReceitaMargarina = 0.9;
 string opcaoDeSair = "";
 
+
 double percentualPaoRelativoFarinha = ReceitaFarinha + ReceitaAgua + ReceitaFermento + ReceitaSal;
 double pesoPaoRecheado = ReceitaFarinha + ReceitaAgua + ReceitaFermento + ReceitaSal;
 
@@ -18,13 +19,9 @@ double pesoPao, farinha, agua, fermento, sal, leite, ovos, açucar, oleo, margar
 
 do
 {
-    Console.WriteLine("-----Bem vindo ao nosso livro de receitas-----");
-    Console.WriteLine("Selecione a receita de acordo com o número dela");
-    
+
     ExibeMenu();
     double opcao = Convert.ToDouble(Console.ReadLine());
-    Console.WriteLine("Digitou errado");
-
     {
     switch (opcao)
         {
@@ -47,13 +44,12 @@ do
             Console.WriteLine($"Água.......: {agua:N0} g");
             Console.WriteLine($"Fermento...: {fermento:N0} g");
             Console.WriteLine($"Sal........: {sal:N0} g");
-
-        break;
+            break;
         }
 
-    switch (opcao)
+        switch (opcao)
         {
-            case 2:
+        case 2:
 
             Console.WriteLine("Receita de pão recheado");
             Console.Write("Peso desejado de pão recheado (em gramas)...: ");
@@ -80,12 +76,11 @@ do
             Console.WriteLine($"Óleo........: {oleo:N0} g");
             Console.WriteLine($"Fermento....: {fermento:N0} g");
             Console.WriteLine($"Água........: {agua:N0} g");
-        
-        break;
-    } 
+            break;
+        }
 
-    switch (opcao)
-    {
+        switch (opcao)
+        {
         case 3:
 
             Console.WriteLine("Receita de pão de forma");
@@ -112,11 +107,11 @@ do
             Console.WriteLine($"Ovos.........: {ovos:N0} g");
             Console.WriteLine($"Açúcar.......: {açucar:N0} g");
             Console.WriteLine($"Óleo.........: {oleo:N0} g");
-        break;
-    }
+            break;
+        }
 
-    switch (opcao)
-    {
+        switch (opcao)
+        {
         case 4:
 
             Console.WriteLine("Receita de pão de queijo");
@@ -143,11 +138,11 @@ do
             Console.WriteLine($"Açúcar......: {açucar:N0} g");
             Console.WriteLine($"Óleo........:{oleo:N0} g");
             break;
-    }
+        }
 
-    switch (opcao)
+        switch (opcao)
         {
-            case 5:
+        case 5:
 
             Console.WriteLine("Receita de baguete");
             Console.Write("Peso desejado de baguete (em gramas)...: ");
@@ -172,36 +167,43 @@ do
             Console.WriteLine($"Sal {sal:N0} g");
             Console.WriteLine($"Ovos {ovos:N0} g");
             Console.WriteLine($"Óleo {oleo:N0} g");
-
-        break;
+            break;
         }
         
     }   
-        void ExibeMenu()
-         {
-            Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("+==============================+");
-            Console.WriteLine("| LIVRO DE RECEITAS DO PADEIRO |");
-            Console.WriteLine("+===========RECEITAS===========+");
-            Console.WriteLine("| 1- Receita de Pão Italiano   |");
-            Console.WriteLine("| 2- Receita de Pão Recheado   |");
-            Console.WriteLine("| 3- Receita de Pão de forma   |"); 
-            Console.WriteLine("| 4- Receita de Pão de queijo  |");
-            Console.WriteLine("| 5- Receita de Baguete        |");
-            Console.WriteLine("+==============================+\n");                
-            Console.ResetColor();
-            Console.Write(" Digite um número da lista: ");
+
+    void ExibeMenu()
+    { 
+    Console.WriteLine("");
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine("--------Bem vindo ao nosso livro de receitas--------");
+    Console.WriteLine("Selecione a receita de acordo com os números na tela");
+    Console.ForegroundColor = ConsoleColor.DarkGreen;
+    Console.WriteLine("          +==============================+         ");
+    Console.WriteLine("          | LIVRO DE RECEITAS DO PADEIRO |         ");
+    Console.WriteLine("          +===========RECEITAS===========+         ");
+    Console.WriteLine("          | 1- Receita de Pão Italiano   |         ");
+    Console.WriteLine("          | 2- Receita de Pão Recheado   |         ");
+    Console.WriteLine("          | 3- Receita de Pão de forma   |         "); 
+    Console.WriteLine("          | 4- Receita de Pão de queijo  |         ");
+    Console.WriteLine("          | 5- Receita de Baguete        |         ");
+    Console.WriteLine("          +==============================+1       \n");  
+    Console.ResetColor();
+    Console.Write("Digite um número da lista: ");
+    }
+
+    // switch(opcao)
+    // {
         
-        }
-            Console.WriteLine();
-            while (opcaoDeSair == "S");
-            Console.Write("Deseja sair? S/N: ");
-            opcaoDeSair = Console.ReadLine()!.ToUpper();
+    //     Console.WriteLine("Você Digitou errado \n");
+    // }
+
+    Console.WriteLine();
+    while (opcaoDeSair == "S");
+    Console.Write("Deseja sair? S/N: ");
+    opcaoDeSair = Console.ReadLine()!.ToUpper();
   
-}
-     
-    while (opcaoDeSair != "S" && opcaoDeSair != "SIM");
-
-Console.ReadLine();
-
+}    
+while (opcaoDeSair != "S" && opcaoDeSair != "SIM");
+    Console.ReadLine();
     Console.WriteLine("VOLTE SEMPRE !!!");
