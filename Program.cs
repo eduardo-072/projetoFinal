@@ -205,5 +205,4 @@ do
   
 }    
 while (opcaoDeSair != "S" && opcaoDeSair != "SIM");
-    Console.ReadLine();
     Console.WriteLine("VOLTE SEMPRE !!!");
