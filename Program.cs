@@ -14,6 +14,10 @@ string opcaoDeSair = "";
 
 double percentualPaoRelativoFarinha = ReceitaFarinha + ReceitaAgua + ReceitaFermento + ReceitaSal;
 double pesoPaoRecheado = ReceitaFarinha + ReceitaAgua + ReceitaFermento + ReceitaSal;
+double pesoPãoForma = ReceitaFarinha + ReceitaAgua + ReceitaOleo + ReceitaOvos + ReceitaMargarina + ReceitaAçucar + ReceitaFermento + ReceitaSal;
+double pesoPãoQueijo = ReceitaFarinha + ReceitaAgua + ReceitaOleo + ReceitaOvos + ReceitaMargarina + ReceitaAçucar + ReceitaFermento + ReceitaSal;
+double pesoBaguete = ReceitaFarinha + ReceitaAgua + ReceitaOleo + ReceitaOvos + ReceitaMargarina + ReceitaAçucar + ReceitaFermento + ReceitaSal;
+
 
 double pesoPao, farinha, agua, fermento, sal, leite, ovos, açucar, oleo, margarina;
 
@@ -85,9 +89,9 @@ do
 
             Console.WriteLine("Receita de pão de forma");
             Console.Write("Peso desejado de pão de forma (em gramas)...: ");
-            pesoPaoRecheado = Convert.ToDouble(Console.ReadLine());
+            pesoPãoForma = Convert.ToDouble(Console.ReadLine());
         
-            farinha = pesoPaoRecheado / percentualPaoRelativoFarinha;
+            farinha = pesoPãoForma / percentualPaoRelativoFarinha;
         
             agua = farinha * ReceitaAgua;
             fermento = farinha * ReceitaFermento;
@@ -102,11 +106,15 @@ do
             Console.WriteLine("\nIngredientes:");
 
             Console.WriteLine($"Farinha......: {farinha:N0} g");
-            Console.WriteLine($"Leite........:{leite:N0} g");
+            Console.WriteLine($"Leite........: {leite:N0} g");
             Console.WriteLine($"Margarina....: {margarina:N0} g");
             Console.WriteLine($"Ovos.........: {ovos:N0} g");
             Console.WriteLine($"Açúcar.......: {açucar:N0} g");
             Console.WriteLine($"Óleo.........: {oleo:N0} g");
+            Console.WriteLine($"Fermento.....: {fermento:N0} g"); 
+            Console.WriteLine($"Água.........: {agua:N0} g");  
+            Console.WriteLine($"Sal..........: {sal:N0} g");
+
             break;
         }
 
@@ -116,9 +124,9 @@ do
 
             Console.WriteLine("Receita de pão de queijo");
             Console.Write("Peso desejado de pão de queijo (em gramas)...: ");
-            pesoPaoRecheado = Convert.ToDouble(Console.ReadLine());
+            pesoPãoQueijo = Convert.ToDouble(Console.ReadLine());
         
-            farinha = pesoPaoRecheado / percentualPaoRelativoFarinha;
+            farinha = pesoPãoQueijo / percentualPaoRelativoFarinha;
         
             agua = farinha * ReceitaAgua;
             fermento = farinha * ReceitaFermento;
@@ -134,9 +142,14 @@ do
             Console.WriteLine($"Farinha.....: {farinha:N0} g");
             Console.WriteLine($"leite.......: {leite:N0} g");
             Console.WriteLine($"Sal.........: {sal:N0} g");
-            Console.WriteLine($"Ovos........:{ovos:N0} g");
+            Console.WriteLine($"Ovos........: {ovos:N0} g");
             Console.WriteLine($"Açúcar......: {açucar:N0} g");
-            Console.WriteLine($"Óleo........:{oleo:N0} g");
+            Console.WriteLine($"Óleo........: {oleo:N0} g");
+            Console.WriteLine($"Água........: {agua:N0} g");  
+            Console.WriteLine($"Fermento....: {fermento:N0} g"); 
+            Console.WriteLine($"Margarina...: {margarina:N0} g");        
+
+
             break;
         }
 
@@ -146,9 +159,9 @@ do
 
             Console.WriteLine("Receita de baguete");
             Console.Write("Peso desejado de baguete (em gramas)...: ");
-            pesoPaoRecheado = Convert.ToDouble(Console.ReadLine());
+            pesoBaguete = Convert.ToDouble(Console.ReadLine());
         
-            farinha = pesoPaoRecheado / percentualPaoRelativoFarinha;
+            farinha = pesoBaguete / percentualPaoRelativoFarinha;
         
             agua = farinha * ReceitaAgua;
             fermento = farinha * ReceitaFermento;
@@ -162,11 +175,17 @@ do
 
             Console.WriteLine("\nIngredientes:");
 
-            Console.WriteLine($"Farinha {farinha:N0} g");
-            Console.WriteLine($"Água {agua:N0} g");
-            Console.WriteLine($"Sal {sal:N0} g");
-            Console.WriteLine($"Ovos {ovos:N0} g");
-            Console.WriteLine($"Óleo {oleo:N0} g");
+            Console.WriteLine($"Farinha.....: {farinha:N0} g");
+            Console.WriteLine($"Água........: {agua:N0} g");
+            Console.WriteLine($"Sal.........: {sal:N0} g");
+            Console.WriteLine($"Ovos........: {ovos:N0} g");
+            Console.WriteLine($"Óleo........: {oleo:N0} g");
+            Console.WriteLine($"Açucar......: {açucar:N0} g");     
+            Console.WriteLine($"Margarina...: {margarina:N0} g");        
+            Console.WriteLine($"leite.......: {leite:N0} g");
+            Console.WriteLine($"Fermento....: {fermento:N0} g"); 
+            
+
             break;
         }
         
@@ -187,16 +206,10 @@ do
     Console.WriteLine("          | 3- Receita de Pão de forma   |         "); 
     Console.WriteLine("          | 4- Receita de Pão de queijo  |         ");
     Console.WriteLine("          | 5- Receita de Baguete        |         ");
-    Console.WriteLine("          +==============================+1       \n");  
+    Console.WriteLine("          +==============================+      \n");  
     Console.ResetColor();
     Console.Write("Digite um número da lista: ");
     }
-
-    // switch(opcao)
-    // {
-        
-    //     Console.WriteLine("Você Digitou errado \n");
-    // }
 
     Console.WriteLine();
     while (opcaoDeSair == "S");

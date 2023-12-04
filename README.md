@@ -1,2 +1,2 @@
 # projetoFinal
-fazendo uma lista de receitas do padeiro
+Fazendo uma lista de receitas do padeiro
